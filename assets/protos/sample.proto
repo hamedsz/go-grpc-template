@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package sample;
+
+option go_package = "example.com/go_grpc_template;rpc";
+
+service SampleService {
+  rpc CreateSample (NewSample) returns (Sample);
+}
+
+message NewSample{
+  string name = 1;
+}
+
+message Sample{
+  int32 id = 1;
+  string name = 2;
+}
